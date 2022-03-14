@@ -2,114 +2,11 @@
   "posts": [
     {
       "id": 2,
-      "name": "asd",
-      "totalBudget": "345",
-      "remainingBudget": "34",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": "sdf"
-    },
-    {
-      "id": 3,
-      "name": "",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
-    },
-    {
-      "id": 4,
-      "name": "",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
-    },
-    {
-      "id": 5,
-      "name": "d",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
-    },
-    {
-      "id": 6,
-      "name": "",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
-    },
-    {
-      "id": 7,
-      "name": "asd",
-      "totalBudget": "23",
-      "remainingBudget": "3",
-      "owner": null,
-      "location": "s"
+      "name": null,
+      "model": null,
+      "brand": "sbb",
+      "color": null,
+      "price": null
     }
   ],
   "comments": [],
