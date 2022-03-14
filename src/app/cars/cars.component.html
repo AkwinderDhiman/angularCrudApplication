@@ -1,0 +1,100 @@
+
+<!-- Modal for cars-->
+<div class="modal fade" id="exampleModalCars" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Car</h5>
+                <br>
+                <div> All fields are mandatory.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" [formGroup]="formValue">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Brand">Model</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Brand"
+                                formControlName="brand">
+                        </div>
+                        <label class="control-label col-sm-2" for="Model">Brand</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Model"
+                                formControlName="model">
+                        </div>
+                        <label class="control-label col-sm-2" for="Color">Color</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Color"
+                                formControlName="color">
+                        </div>
+                        <label class="control-label col-sm-2" for="Price">Price</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Price"
+                                formControlName="price">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" 
+                (click)="postCarsDetail()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- <tr>
+                <th scope="row">2</th>
+                <td>Ford</td>
+                <td>3</td>
+                <td>$1525</td>
+                <td>$2700</td>
+                <td>
+                    <button class="btn btn-primary">View</button>&nbsp;
+                    <button class="btn btn-success">Edit</button>&nbsp;
+                    <button class="btn btn-danger">Delete</button>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Ford</td>
+                <td>3</td>
+                <td>$1525</td>
+                <td>$2700</td>
+                <td>
+                    <button class="btn btn-primary">View</button>&nbsp;
+                    <button class="btn btn-success">Edit</button>&nbsp;
+                    <button class="btn btn-danger">Delete</button>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Ford</td>
+                <td>3</td>
+                <td>$1525</td>
+                <td>$2700</td>
+                <td>
+                    <button class="btn btn-primary">View</button>&nbsp;
+                    <button class="btn btn-success">Edit</button>&nbsp;
+                    <button class="btn btn-danger">Delete</button>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Ford</td>
+                <td>3</td>
+                <td>$1525</td>
+                <td>$2700</td>
+                <td>
+                    <button class="btn btn-primary">View</button>&nbsp;
+                    <button class="btn btn-success">Edit</button>&nbsp;
+                    <button class="btn btn-danger">Delete</button>&nbsp;
+                </td>
+            </tr> -->
+            <!-- name: [''],
+            model:[''],
+            brand: [''],
+            color: [''],
+            price:[''] -->
+          
+            
