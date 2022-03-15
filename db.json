@@ -1,71 +1,34 @@
 {
   "posts": [
     {
-      "id": 1,
-      "name": null,
-      "model": "sdv",
-      "brand": "Zx",
-      "color": "dfv",
-      "price": "sd"
-    },
-    {
-      "id": 2,
-      "name": "asd",
-      "totalBudget": "345",
-      "remainingBudget": "34",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": "sdf"
-    },
-    {
-      "id": 3,
-      "name": "",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
-    },
-    {
       "id": 4,
-      "name": "",
-      "totalBudget": "",
-      "remainingBudget": "",
-      "owner": {
-        "firstName": [
-          ""
-        ],
-        "lastName": [
-          ""
-        ]
-      },
-      "location": {
-        "latitude": [
-          ""
-        ],
-        "longitude": [
-          ""
-        ]
-      }
+      "name": null,
+      "model": "bhhj",
+      "brand": null,
+      "color": null,
+      "price": null
+    },
+    {
+      "id": 6,
+      "name": null,
+      "model": "hjs",
+      "brand": "bb",
+      "color": "cc",
+      "price": "pp"
+    },
+    {
+      "id": 7,
+      "name": "hjjkk",
+      "totalBudget": "4786",
+      "remainingBudget": "8696",
+      "location": null
+    },
+    {
+      "id": 8,
+      "name": "dhjfk",
+      "totalBudget": "89",
+      "remainingBudget": "78",
+      "location": "jdj"
     }
   ],
   "comments": [],
