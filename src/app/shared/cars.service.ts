@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { Cars } from '../cars.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
-
+  car: Cars = new Cars();
   constructor(private httpClient:HttpClient) { }
 
   postCars( data:any){

@@ -1,7 +1,7 @@
 export class Cars {
-    id: Number = 0;
+    id: number = 0;
     name: String = "  ";
-    model: Number = 0;
+    model: number = 0;
     brand: String = "  ";
     color: String = "  ";
     price: String = "  ";

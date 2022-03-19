@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { Dealers } from '../dealers.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  
+  dealr: Dealers= new Dealers();
   constructor( private httpClient:HttpClient) { }
 
   postDealr( data:any){

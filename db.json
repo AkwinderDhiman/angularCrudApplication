@@ -1,34 +1,12 @@
 {
   "posts": [
     {
-      "id": 4,
+      "id": 2,
       "name": null,
-      "model": "bhhj",
+      "model": "hh",
       "brand": null,
       "color": null,
       "price": null
-    },
-    {
-      "id": 6,
-      "name": null,
-      "model": "hjs",
-      "brand": "bb",
-      "color": "cc",
-      "price": "pp"
-    },
-    {
-      "id": 7,
-      "name": "hjjkk",
-      "totalBudget": "4786",
-      "remainingBudget": "8696",
-      "location": null
-    },
-    {
-      "id": 8,
-      "name": "dhjfk",
-      "totalBudget": "89",
-      "remainingBudget": "78",
-      "location": "jdj"
     }
   ],
   "comments": [],
