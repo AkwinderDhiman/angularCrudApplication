@@ -4,6 +4,6 @@ export class Cars {
     model: number = 0;
     brand: String = "  ";
     color: String = "  ";
-    price: String = "  ";
+    price: number = 0;
     
 }

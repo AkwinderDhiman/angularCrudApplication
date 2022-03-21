@@ -3,13 +3,9 @@ export class Dealers {
     name: String = "  ";
     totalBudget: Number = 0;
     remainingBudget: Number = 0;
-    owner!: {
-        firstName: String;
-        lastName: String;
-    } 
-    location!: {
-        latitude: Number;
-        longitude: Number;
-    } 
-  amountOfCars!: Number ;
+    ownerFirstName: String = "";
+    ownerLastName: String = "";
+    location: String = "  ";
+
+    amountOfCars!: Number;
 }

@@ -86,7 +86,8 @@ export class AppComponent {
     this.dealrModelObj.name = this.formValue.value.dealrName;
     this.dealrModelObj.totalBudget = this.formValue.value.totalBudget;
     this.dealrModelObj.remainingBudget = this.formValue.value.remainingBudget;
-    this.dealrModelObj.owner = this.formValue.value.owner;
+    this.dealrModelObj.ownerFirstName = this.formValue.value.ownerFirstName;
+    this.dealrModelObj.ownerLastName = this.formValue.value.ownerLastName;
     this.dealrModelObj.location = this.formValue.value.location;
 
     this.api.postDealr(this.dealrModelObj).subscribe(res => {
@@ -125,19 +126,20 @@ export class AppComponent {
     this.formValue.controls['amountOfCars'].setValue(dealr.amountOfCars)
     this.formValue.controls['totalBudget'].setValue(dealr.totalBudget);
     this.formValue.controls['remainingBudget'].setValue(dealr.remainingBudget);
-    this.formValue.controls['owner'].setValue(dealr.owner)
+    this.formValue.controls['ownerFirstName'].setValue(dealr.ownerFirstName)
+    this.formValue.controls['ownerLastName'].setValue(dealr.ownerLastName)
     this.formValue.controls['location'].setValue(dealr.location);
   }
 
-  updateDealrsDetails(dealr:any) {
+  updateDealrsDetails() {
     
     this.showUpdate = true;
-    this.dealrModelObj.id = dealr.id;
     this.dealrModelObj.name = this.formValue.value.dealrName;
     this.dealrModelObj.amountOfCars = this.formValue.value.amountOfCars;
     this.dealrModelObj.totalBudget = this.formValue.value.totalBudget;
     this.dealrModelObj.remainingBudget = this.formValue.value.remainingBudget;
-    this.dealrModelObj.owner = this.formValue.value.owner;
+    this.dealrModelObj.ownerFirstName = this.formValue.value.ownerFirstName;
+    this.dealrModelObj.ownerLastName = this.formValue.value.ownerLastName;
     this.dealrModelObj.location = this.formValue.value.location;
 
     this.api.updateDealr(this.dealrModelObj, this.dealrModelObj.id).subscribe(res => {
@@ -199,9 +201,8 @@ export class AppComponent {
     this.formValueCar.controls['color'].setValue(car.color);
     this.formValueCar.controls['price'].setValue(car.price)
   }
-  updateCarsDetails(car:any) {
+  updateCarsDetails() {
     this.showUpdateCar = true;
-    this.carsModelObj.id = car.id;
     this.carsModelObj.name = this.formValue.value.name;
     this.carsModelObj.model = this.formValue.value.model;
     this.carsModelObj.brand = this.formValue.value.brand;

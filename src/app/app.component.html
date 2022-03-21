@@ -122,7 +122,7 @@
                 <button type="button" class="btn btn-primary"  *ngIf="showAdd"
                     (click)="postDealrDetail(dealr)" >Save</button>
                 <button type="button" class="btn btn-primary" *ngIf="showUpdate"
-                 (click)="updateDealrsDetails(dealr)" >Update</button>
+                 (click)="updateDealrsDetails()" >Update</button>
             </div>
         </div>
     </div>
@@ -199,7 +199,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" *ngIf="showUpdateCar"
-                 (click)="updateCarsDetails(car)">Update</button>
+                 (click)="updateCarsDetails()">Update</button>
                 <button type="button" class="btn btn-primary" *ngIf="showAddCar" 
                  (click)="postCarsDetail()">Save</button>
             </div>

@@ -1,14 +1,5 @@
 {
-  "posts": [
-    {
-      "id": 2,
-      "name": null,
-      "model": "hh",
-      "brand": null,
-      "color": null,
-      "price": null
-    }
-  ],
+  "posts": [],
   "comments": [],
   "profile": {
     "name": "typicode"
