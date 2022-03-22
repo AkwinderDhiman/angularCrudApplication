@@ -1,0 +1,217 @@
+<!-- navigation -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <h3>LOGO</h3>
+        <ul class="nav navbar-nav navbar-right ">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-----dealership---->
+
+<div class="container-fluid">
+    <h3>Dealrship</h3>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+        <div class="form-group d-flex">
+            <input type="text" class="form-control navbar-left" placeholder="Search"  
+            id="myInput" (click)="search()"  placeholder="Search" search>&nbsp;
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                *ngIf="dealr_open" (click)="addDealr()">
+                <i class="bi bi-plus">Add Dealer</i>
+            </button>&nbsp;
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCars"
+                *ngIf="should_open" (click)="addCar()">
+                <i class="bi bi-plus">Add Car</i>
+            </button>&nbsp;
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" *ngIf="should_open" (click)="dealrView()">
+                <i class="bi bi-plus">Back</i>
+            </button>
+
+        </div>
+    </form>
+</div>
+<br>
+
+
+<!-----Dealer table----->
+<div class="container-fluid" *ngIf="dealr_open" id="myInput">
+    <table class="table table-bordered">
+        <thead class="table-dark ">
+            <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Amount of Cars</th>
+                <th scope="col">Total Budget</th>
+                <th scope="col">Remaining Budget</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dealr of dealrData | filter: filterTerm">
+                <th scope="row">{{dealr.id}}</th>
+                <td>{{dealr.name}}</td>
+                <td>{{dealr.amountOfCars}}</td>
+                <td>{{dealr.totalBudget | currency }}</td>
+                <td>{{dealr.remainingBudget | currency }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="carsView()"
+                       ><i class="bi bi-eye-fill">View</i></button>&nbsp;
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="onEditDealrs(dealr)">
+                        <i class="bi bi-pencil-square">Edit</i>&nbsp;
+                    </button>&nbsp;
+                    <button class="btn btn-danger" (click)="deleteDealrs(dealr)">
+                        <i class="bi bi-trash3-fill">Delete</i>&nbsp;
+                    </button>&nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal for dealrs-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="exampleModalLabel">Add Dealer</h1>&nbsp;&nbsp;
+                <br>
+                <div style="margin-top: 5px;"> All fields are mandatory.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" [formGroup]="formValue">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="dealrName">Dealer's Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Dealer's Name"
+                                formControlName="dealrName">
+                        </div>
+                        <label class="control-label col-sm-2" for="Location">Location</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Location" formControlName="location">
+                        </div>
+                        <label class="control-label col-sm-2" for="TotalBudget">Total Budget</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="$0.00" formControlName="totalBudget">
+                        </div>
+                        <label class="control-label col-sm-2" for="remainingBudget">Remaining Budget</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="$0.00"
+                                formControlName="remainingBudget">
+                        </div>
+                        <label class="control-label col-sm-2" for="OwnerFirstName">Owner's First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Owner's First Name"
+                                formControlName="ownerFirstName">
+                        </div>
+                        <label class="control-label col-sm-2" for="ownerLastName">Owner's Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Owner's Last Name" formControlName="ownerLastName">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary"  *ngIf="showAdd"
+                    (click)="postDealrDetail(dealr)" >Save</button>
+                <button type="button" class="btn btn-primary" *ngIf="showUpdate"
+                 (click)="updateDealrsDetails(dealr)" >Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-----cars table----->
+<div class="container-fluid" id="exampleModalCars" *ngIf="should_open" id="myInput">
+    <table class="table table-bordered">
+        <thead class="table-dark ">
+            <tr>
+                <th scope="col">Sr.No</th>
+                <th scope="col">model</th>
+                <th scope="col">brand</th>
+                <th scope="col">color</th>
+                <th scope="col">price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of carsData ">
+                <th scope="row">{{car.id}}</th>
+                <td>{{car.model}}</td>
+                <td>{{car.brand}}</td>
+                <td>{{car.color }}</td>
+                <td>{{car.price | currency }}</td>
+                <td>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalCars" (click)="onEditCars(car)">
+                        <i class="bi bi-pencil-square">Edit</i>&nbsp;
+                    </button>&nbsp;
+                    <button class="btn btn-danger" (click)="deleteCars(car)">
+                        <i class="bi bi-trash3-fill">Delete</i>&nbsp;
+                    </button>&nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal for cars-->
+<div class="modal fade" id="exampleModalCars" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="exampleModalLabel">Add Car</h1>&nbsp;&nbsp;
+                <br>
+                <div> All fields are mandatory.</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+                <form class="form-horizontal" [formGroup]="formValueCar">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Model">Model</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Model" formControlName="model">
+                        </div>
+                        <label class="control-label col-sm-2" for="Model">Brand</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Brand" formControlName="brand">
+                        </div>
+                        <label class="control-label col-sm-2" for="Color">Color</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Color" formControlName="color">
+                        </div>
+                        <label class="control-label col-sm-2" for="Price">Price</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Price" formControlName="price">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" *ngIf="showUpdateCar"
+                 (click)="updateCarsDetails(car)">Update</button>
+                <button type="button" class="btn btn-primary" *ngIf="showAddCar" 
+                 (click)="postCarsDetail()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        All Copyright © 2022 are reserved
+    </div>
+    <!-- Copyright -->
+</footer>
